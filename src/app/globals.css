@@ -1,26 +1,30 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-background: #FAFAFA;
+  --color-foreground: #0A0A0C;
+  --color-finanses-blue: #0066FF;
+  --color-finanses-blue-dark: #0052CC;
+  --color-finanses-dark: #0A0A0C;
+  --color-finanses-surface: #FFFFFF;
+  --color-finanses-surface-dark: #121217;
+  --color-finanses-muted: #F0F0F0;
+  --color-finanses-muted-dark: #1E1E24;
+  --color-finanses-border: #E5E5E5;
+  --color-finanses-border-dark: #2A2A32;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
